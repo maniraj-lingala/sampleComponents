@@ -1,0 +1,19 @@
+<div class="container-fluid row feild">
+  @if(dropdownList==[])
+  {
+    {{"Dropdown is empty"}}
+  }
+  @else 
+  {
+    <mat-form-field>
+      <mat-select [placeholder]="placeholder">
+        @for(item of dropdownList; track item)
+        {
+          <mat-option  [value]="item.id">
+            {{ item.name}}
+          </mat-option>
+        } 
+      </mat-select>
+    </mat-form-field>
+  }
+</div>

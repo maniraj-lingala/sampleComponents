@@ -1,0 +1,31 @@
+@if (isHello) {
+  <div class="container">
+    <div class="row">
+        <div class="col">
+          <p>Type your name</p>
+        </div>
+        <div class="col">
+          <app-inputfeild title="Input"></app-inputfeild>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p>Select your DOB</p>
+      </div>
+      <div class="col">
+        <app-date-picker calenderName="Start Date"></app-date-picker>
+      </div>
+  </div>
+    <div class="row">
+      <div class="col">
+        <p>select your Manager</p>
+      </div>
+      <div class="col">
+        <app-dropdown [placeholder]="dropdownName" [dropdownList]="dropdownList"></app-dropdown>
+      </div>
+  </div>
+  </div>
+}
+@else {
+  <p>not Hello</p>
+}
