@@ -1,0 +1,11 @@
+{
+    "label":"Select Manager",
+    "Managers List":[
+        {"id":"0","name":"Baskar Rao"},
+        {"id":"1","name":"Muralidhar Palla"},
+        {"id":"2","name":"Baskar Reddy"},
+        {"id":"3","name":"Naga Shashank"},
+        {"id":"4","name":"Gandhar"},
+        {"id":"5","name":"Jeevan"}
+    ]
+}
