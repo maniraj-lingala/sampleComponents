@@ -20,7 +20,10 @@
         <p>select your Manager</p>
       </div>
       <div class="col">
-        <app-dropdown [placeholder]="dropdownName" [dropdownList]="dropdownList" (selectedValue)="dropdownSelected"></app-dropdown>
+        <app-dropdown [placeholder]="dropdownName" 
+                      [dropdownList]="dropdownList" 
+                      (selectedValueChange)="dropdownSelected=$event">
+        </app-dropdown>
       </div>
     </div>
     <div class="row">

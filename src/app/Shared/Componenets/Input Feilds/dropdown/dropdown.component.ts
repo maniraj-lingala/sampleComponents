@@ -12,7 +12,7 @@ export class DropdownComponent{
   @Input() placeholder!:string;
   @Input() dropdownList!:any;
   @Output() selectedValueChange=new EventEmitter();
-  selectedvalue!:string;
+  selectedvalue:number=0;
   onSelectionChange() 
   {
       console.log(this.selectedvalue);

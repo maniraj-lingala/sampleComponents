@@ -21,12 +21,16 @@ export class AppComponent implements OnChanges{
   dropdownList:any=managers['Managers List'];
   dropdownName:string=managers.label;
   managerSelected:string='default';
-  dropdownSelected!:string;
+  dropdownSelected!:number;
   ngOnChanges(changes:SimpleChanges):void
   {
       if(changes['dropdownSelected'])
       {
         console.log(this.dropdownSelected);
       }
+  }
+  ngonDestroy()
+  {
+    console.log(this.dropdownSelected);
   }
 }
