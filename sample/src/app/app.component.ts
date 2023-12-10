@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
@@ -16,15 +16,17 @@ import managers from "../assets/JSON/managers.json";
     templateUrl: './app.component.html',
     imports: [CommonModule, RouterOutlet, DatePickerComponent, InputfeildComponent, DropdownComponent]
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnChanges{
   title = 'sample';
-  isHello: boolean=true;
   dropdownList:any=managers['Managers List'];
   dropdownName:string=managers.label;
-  ngOnInit(): void {/* 
-    this.dropdownList.push("Baskar Reddy");
-    this.dropdownList.push("Baskar Rao"); */
+  managerSelected:string='default';
+  dropdownSelected!:string;
+  ngOnChanges(changes:SimpleChanges):void
+  {
+      if(changes['dropdownSelected'])
+      {
+        console.log(this.dropdownSelected);
+      }
   }
-
-
 }

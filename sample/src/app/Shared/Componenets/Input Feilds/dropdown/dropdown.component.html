@@ -6,7 +6,9 @@
   @else 
   {
     <mat-form-field>
-      <mat-select [placeholder]="placeholder">
+      <mat-select [placeholder]="placeholder"
+       [(value)]="selectedvalue" 
+       (selectionChange)="onSelectionChange()">
         @for(item of dropdownList; track item)
         {
           <mat-option  [value]="item.id">

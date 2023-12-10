@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, DoCheck,OnChanges,OnDestroy,OnInit, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 
 import {MatSelectModule} from '@angular/material/select';
 
@@ -8,16 +8,14 @@ import {MatSelectModule} from '@angular/material/select';
   imports: [MatSelectModule],
   templateUrl: './dropdown.component.html'
 })
-export class DropdownComponent {
+export class DropdownComponent{
   @Input() placeholder!:string;
   @Input() dropdownList!:any;
-  @Output() return=new EventEmitter();
-  selectedvalue:string='';
-  ngOnInit():void
+  @Output() selectedValueChange=new EventEmitter();
+  selectedvalue!:string;
+  onSelectionChange() 
   {
-    this.return.emit(this.selectedvalue);
-  }
-  constructor()
-  {
+      console.log(this.selectedvalue);
+      this.selectedValueChange.emit(this.selectedvalue);
   }
 }

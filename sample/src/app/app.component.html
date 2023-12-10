@@ -1,5 +1,4 @@
-@if (isHello) {
-  <div class="container">
+<div class="container">
     <div class="row">
         <div class="col">
           <p>Type your name</p>
@@ -15,17 +14,16 @@
       <div class="col">
         <app-date-picker calenderName="Start Date"></app-date-picker>
       </div>
-  </div>
+    </div>
     <div class="row">
       <div class="col">
         <p>select your Manager</p>
       </div>
       <div class="col">
-        <app-dropdown [placeholder]="dropdownName" [dropdownList]="dropdownList"></app-dropdown>
+        <app-dropdown [placeholder]="dropdownName" [dropdownList]="dropdownList" (selectedValue)="dropdownSelected"></app-dropdown>
       </div>
-  </div>
-  </div>
-}
-@else {
-  <p>not Hello</p>
-}
+    </div>
+    <div class="row">
+        <p>{{dropdownSelected}}</p>
+    </div>
+</div>
